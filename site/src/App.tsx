@@ -1,4 +1,5 @@
 import './App.css'
+import BackgroundMusic from './BackgroundMusic'
 
 const hallImage = import.meta.env.BASE_URL + 'images/citadel-hall-frame.png'
 
@@ -78,6 +79,7 @@ function App() {
           </footer>
         </div>
       </main>
+      <BackgroundMusic />
     </>
   )
 }
