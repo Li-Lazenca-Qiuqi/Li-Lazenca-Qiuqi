@@ -80,7 +80,11 @@ function BackgroundMusic() {
   const isPlaying = playbackState === 'playing'
   const label = playbackState === 'error'
     ? '音乐不可用'
-    : isPlaying ? '暂停音乐' : '播放音乐'
+    : isPlaying ? '暂停音乐'
+      : playbackState === 'blocked' ? '点击播放音乐' : '播放音乐'
+  const description = playbackState === 'blocked'
+    ? '浏览器限制有声自动播放，请点击播放音乐'
+    : label
 
   return (
     <>
@@ -89,13 +93,13 @@ function BackgroundMusic() {
         className={'music-control' + (isPlaying ? ' is-playing' : '')}
         type="button"
         onClick={togglePlayback}
-        aria-label={label}
+        aria-label={description}
         aria-pressed={isPlaying}
         disabled={playbackState === 'error'}
-        title={label}
+        title={description}
       >
         <span className="music-bars" aria-hidden="true"><i /><i /><i /></span>
-        <span>{label}</span>
+        <span aria-live="polite">{label}</span>
       </button>
     </>
   )
