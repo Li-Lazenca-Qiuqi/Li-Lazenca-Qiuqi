@@ -30,7 +30,7 @@ uv run --no-project python -m http.server 8765 --bind 0.0.0.0
 
 ## 文件与修改方式
 
-- README.md：可供 GitHub 使用的演示内容。
+- README_.md：暂时不在 GitHub 资料页展示的演示草稿；定稿后可改回 README.md。
 - assets/：Banner、统计占位、贡献示例的深浅主题 SVG。
 - assets/badges/：13 个统一徽章，使用文字缩写而非官方品牌图形。
 - demo/index.html：当前 README 的渲染快照，修改 README 后需重新生成并刷新。
@@ -45,7 +45,7 @@ uv run --no-project python -m http.server 8765 --bind 0.0.0.0
 uv run --no-project python scripts/build_demo.py
 ```
 
-该命令覆盖 README.md 及其管理的 SVG，不再生成预览 HTML；运行前核对人工修改。随后单独运行 build_preview.py，它只读取 README，并按项目根目录解析资源路径。
+该命令覆盖 README_.md 及其管理的 SVG，不再生成预览 HTML；运行前核对人工修改。随后单独运行 build_preview.py，它只读取该草稿，并按项目根目录解析资源路径。
 
 ## 本地检查结果（2026-09-12）
 

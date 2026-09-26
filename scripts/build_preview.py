@@ -20,7 +20,7 @@ def render_markdown(source):
 
 def build():
     """读取当前 README，以项目根为资源基准生成预览；返回源文件摘要。"""
-    source = (ROOT / "README.md").read_text(encoding="utf-8")
+    source = (ROOT / "README_.md").read_text(encoding="utf-8")
     digest = sha256(source.encode()).hexdigest()
     content = render_markdown(source)
     page = f'''<!doctype html>
@@ -42,12 +42,12 @@ def build():
 <nav aria-label="本地预览设置">
 <button id="theme-toggle" type="button" aria-pressed="false">深色预览</button>
 <button id="width-toggle" type="button" aria-pressed="false">窄屏预览</button>
-<a href="README.md">查看源文件</a>
+<a href="README_.md">查看源文件</a>
 </nav>
-<p>直接渲染 README.md · GitHub 样式近似 · 不含个人主页侧栏</p>
+<p>直接渲染 README_.md · GitHub 样式近似 · 不含个人主页侧栏</p>
 </header>
 <main id="preview-frame">
-<div class="file-label">README.md</div>
+<div class="file-label">README_.md</div>
 <article class="markdown-body" id="readme-content">
 {content}
 </article>

@@ -90,8 +90,8 @@ def build():
         if badges:
             md+=['<p>\n'+'\n'.join(badges)+'\n</p>']
     md+=["","## GitHub Stats","","演示占位，尚未连接 GitHub 账号。","",picture("stats","统计卡片演示：尚未连接账号，无真实数值。"),"","## Contribution Snake","","示例网格与静态贪吃蛇，仅用于查看风格，不代表真实贡献记录。","",picture("snake","贡献图静态演示：合成示例数据，不代表真实贡献记录。"),"","---","","<sub>主页风格 Demo · 文案与工具清单待最终确认</sub>",""]
-    write("README.md","\n".join(md))
-    print("资源与 README 已生成；请另行运行 build_preview.py 更新预览。")
+    write("README_.md","\n".join(md))
+    print("资源与 README 草稿已生成；请另行运行 build_preview.py 更新预览。")
 
 if __name__=="__main__":
     build()
