@@ -4,7 +4,7 @@
 
 ## 范围
 
-`site/` 是独立个人网站的 React、TypeScript、Vite 源码。根目录 `README.md` 仍是 GitHub Profile README；`demo/` 只预览该 README。两个交付物各自运行，不共享构建输出。
+`site/` 是独立个人网站的 React、TypeScript、Vite 源码。根目录 `README_.md` 暂存 GitHub Profile 草稿，不在资料页展示；`demo/` 只预览该草稿。两个交付物各自运行，不共享构建输出。
 
 首版网站介绍研究、软件开发与游戏玩家身份。游戏部分只陈述用户确认的玩家身份。页面没有真实统计、具体游戏清单、联系方式或账号链接；文案与视觉仍待审阅。
 
@@ -99,3 +99,12 @@ Windows 的 5173 端口被另一个本地服务占用，从 Windows 打开 `http
 
 - 按用户要求，将固定音乐按钮从右下角移至视口左上角；桌面与手机分别保留 24 px 和 14 px 的边距。
 - 本地 Chromium 在 1440×900、390×844 检查首屏，并在手机上滚动至研究章节核对遮挡：按钮可见且可点击，章节标题与正文未被遮住；无横向溢出或控制台错误。
+
+## GitHub Pages 部署准备（2026-09-26）
+
+- 仓库 `Li-Lazenca-Qiuqi/Li-Lazenca-Qiuqi` 的 Pages 来源已在 GitHub 设置为 GitHub Actions，预期地址为 `https://li-lazenca-qiuqi.github.io/Li-Lazenca-Qiuqi/`；尚无成功部署。
+- `.github/workflows/deploy-pages.yml` 使用手动触发：在 `site/` 安装锁定依赖并构建，将 `site/dist/` 上传到 Pages。推送工作流本身不会自动发布网站。
+- Vite 在生产构建和生产预览时使用 `/Li-Lazenca-Qiuqi/` 作为资源基路径，本地开发仍使用 `/`，保留 `http://localhost:5180/` 入口。
+- 在仓库 Actions 页选择 `Deploy personal site to GitHub Pages`、点击 `Run workflow` 并选 `main`。运行成功后，再检查 Pages 实际地址、图片、字体、音乐和导航。
+- 用户表示所购原声带可用于个人非商业网站；本项目未核验公开传播授权条款。正式运行发布工作流前应确认这一范围。
+- `npm run build` 与工作流 YAML 解析通过；本地生产预览的仓库子路径下，HTML、JavaScript、主插画和 MP3 均返回 200 且内容类型正确。尚未完成线上验收。
