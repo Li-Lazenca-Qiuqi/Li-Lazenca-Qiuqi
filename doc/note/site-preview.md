@@ -108,3 +108,10 @@ Windows 的 5173 端口被另一个本地服务占用，从 Windows 打开 `http
 - 在仓库 Actions 页选择 `Deploy personal site to GitHub Pages`、点击 `Run workflow` 并选 `main`。运行成功后，再检查 Pages 实际地址、图片、字体、音乐和导航。
 - 用户表示所购原声带可用于个人非商业网站；本项目未核验公开传播授权条款。正式运行发布工作流前应确认这一范围。
 - `npm run build` 与工作流 YAML 解析通过；本地生产预览的仓库子路径下，HTML、JavaScript、主插画和 MP3 均返回 200 且内容类型正确。尚未完成线上验收。
+
+## GitHub Pages 首次部署（2026-09-26）
+
+- 用户授权提交推送后，Profile 草稿隐藏与 Pages 配置分别以 `212e2af`、`6487bed` 提交并推送到 `main`。远端根目录只有 `README_.md`，工作流文件已出现在 Actions 列表中。
+- 手动运行 `Deploy personal site to GitHub Pages`，运行记录 `36242215400` 的所有步骤成功。实际地址为 `https://li-lazenca-qiuqi.github.io/Li-Lazenca-Qiuqi/`，HTML、JavaScript、CSS、主插画和 MP3 均返回 200，类型符合预期；Pages 已强制 HTTPS。
+- 本地生产构建在仓库子路径下用 Chromium 检查 1440 px 桌面与 390 px 手机：页面标题、主标题、研究、开发、游戏内容和音乐按钮可见，无控制台错误或横向溢出；两张全页截图已目视核对屋顶、两侧立柱与正文布局。
+- 线上地址的 Chromium 导航在本地网络环境中超时，因此本轮视觉检查基于与已部署提交一致的本地生产构建；线上 HTTP 与资源检查独立通过。
