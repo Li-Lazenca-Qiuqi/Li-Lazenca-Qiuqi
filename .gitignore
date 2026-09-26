@@ -1,0 +1,5 @@
+# 本地浏览器检查产物不进入版本控制。
+.playwright-cli/
+output/playwright/
+__pycache__/
+.venv/
