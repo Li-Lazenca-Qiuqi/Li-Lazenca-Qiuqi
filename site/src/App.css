@@ -205,10 +205,12 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 @media (max-width: 700px) {
   :root {
     --gutter: 13px;
-    --frame-top: 270px;
-    --frame-side: clamp(30px, 8.3vw, 38px);
-    --frame-bottom: 95px;
+    /* 按原图 1086×1448 的切片比例缩放，避免窄屏屋顶和底座被纵向拉长。 */
+    --frame-top: 31vw;
+    --frame-side: 10vw;
+    --frame-bottom: 12.5vw;
   }
+  .page-shell::before { top: -45px; height: 60px; }
   .page-content { padding-top: 15px; }
   .site-header { min-height: 67px; }
   .wordmark { font-size: 17px; letter-spacing: .06em; }
